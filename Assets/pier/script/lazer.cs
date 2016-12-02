@@ -21,7 +21,7 @@ public class lazer : MonoBehaviour {
     {
         rb = GetComponentInParent<Rigidbody>();
         line = GetComponent<LineRenderer>();
-        line.SetVertexCount(2);
+        line.numPositions =(2);
         line.material = lineMaterial;
         line.enabled = false;
     }

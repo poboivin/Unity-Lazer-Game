@@ -3,11 +3,15 @@ using System.Collections;
 
 public class LazerActivator : MonoBehaviour, ILazerAction, IhasState
 {
+
+    public Color inactiveColor;
+    public Color activeColor;
+
     public GameObject target;
     bool JustActive = true;
     bool isActive = false;
 
-
+    Renderer rend;
     public bool OnEnter = true;
     public bool OnStay = true;
     public bool OnExit = true;
@@ -22,6 +26,8 @@ public class LazerActivator : MonoBehaviour, ILazerAction, IhasState
         if (target != null)
             ObjectToActOn = target.GetComponent<IAction>();
 
+        rend = transform.GetComponent<Renderer>();
+        inactiveColor = rend.sharedMaterial.color;
     }
 
     public void Update()
@@ -34,6 +40,7 @@ public class LazerActivator : MonoBehaviour, ILazerAction, IhasState
             {
                 if (ObjectToActOn != null)
                     ObjectToActOn.OnExitAction();
+                rend.sharedMaterial.color = inactiveColor;
             }
         }
         isActive = false;
@@ -49,6 +56,7 @@ public class LazerActivator : MonoBehaviour, ILazerAction, IhasState
                 if (ObjectToActOn != null)
                     ObjectToActOn.OnStartAction();
             }
+            rend.sharedMaterial.color = activeColor;
         }
         
         if (OnStay)

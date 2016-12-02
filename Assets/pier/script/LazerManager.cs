@@ -8,7 +8,8 @@ public class LazerManager : MonoBehaviour
     public static void updateRay(LineRenderer line,Ray Rray, float range,int maxBounce ,int numBounce)
     {
         RaycastHit hit;
-        line.SetVertexCount(numBounce + 2);
+       
+        line.numPositions = (numBounce + 2);
       //  line.sortingOrder = 3;
         if (Physics.Raycast(Rray, out hit, range,  Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
