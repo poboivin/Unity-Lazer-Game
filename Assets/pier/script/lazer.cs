@@ -73,31 +73,5 @@ public class lazer : MonoBehaviour {
           
         }
 	}
-  /*  void updateRay(Ray Rray, int numBounce)
-    {
-        line.SetVertexCount(numBounce + 2);
-        if (Physics.Raycast(Rray, out hit, range))
-        {
-
-            line.SetPosition(numBounce, Rray.origin);  //sets the line position
-            line.SetPosition(numBounce+1, hit.point);
-            if (numBounce < maxBounce)
-            {
-                
-                
-                
-                Ray ray = new Ray(hit.point, Vector3.Reflect(Rray.direction, hit.normal));
-
-                updateRay(ray, numBounce + 1);
-                return;
-            }
-
-        }
-        else
-        {
-            //if we havent hit just put the end of the line at max range
-            line.SetPosition(numBounce, Rray.origin);
-            line.SetPosition(numBounce+1, Rray.GetPoint(range));
-        }
-    }*/
+ 
 }

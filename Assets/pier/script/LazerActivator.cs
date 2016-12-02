@@ -27,7 +27,7 @@ public class LazerActivator : MonoBehaviour, ILazerAction, IhasState
             ObjectToActOn = target.GetComponent<IAction>();
 
         rend = transform.GetComponent<Renderer>();
-        inactiveColor = rend.sharedMaterial.color;
+        inactiveColor = rend.material.color;
     }
 
     public void Update()
@@ -40,8 +40,10 @@ public class LazerActivator : MonoBehaviour, ILazerAction, IhasState
             {
                 if (ObjectToActOn != null)
                     ObjectToActOn.OnExitAction();
-                rend.sharedMaterial.color = inactiveColor;
+                
             }
+            
+            rend.material.color = inactiveColor;
         }
         isActive = false;
     }
@@ -56,7 +58,7 @@ public class LazerActivator : MonoBehaviour, ILazerAction, IhasState
                 if (ObjectToActOn != null)
                     ObjectToActOn.OnStartAction();
             }
-            rend.sharedMaterial.color = activeColor;
+            rend.material.color = activeColor;
         }
         
         if (OnStay)
