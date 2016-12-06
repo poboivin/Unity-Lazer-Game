@@ -4,3 +4,4 @@ obj/
 Temp/
 Library/metadata/
 Library/
+*.suo

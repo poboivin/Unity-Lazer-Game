@@ -69,4 +69,10 @@ public class LazerActivator : MonoBehaviour, ILazerAction, IhasState
         isActive = true;
         return true;
     }
+
+    void OnDisable()
+    {
+        Destroy(rend.material); // destroy instance material
+    }
+    
 }
