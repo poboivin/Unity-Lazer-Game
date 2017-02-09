@@ -29,6 +29,7 @@ public class circlePuzzle : MonoBehaviour, Iinteractable
 
     public bool OnStartAction()
     {
+
         if(isRorating == false)
         {
             
