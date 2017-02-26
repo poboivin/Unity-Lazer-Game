@@ -19,6 +19,8 @@ public class hookTest : MonoBehaviour {
         hookPoint = hp.position;
         if (selfInit)
             ropeLength = Vector3.Distance(hookPoint, transform.position);
+
+        rb.AddForce(transform.forward * 10f, ForceMode.VelocityChange);
     }
     float sign(float a)
     {
@@ -58,10 +60,10 @@ public class hookTest : MonoBehaviour {
 
             float tensionForce = rb.mass *Physics.gravity.magnitude * Mathf.Cos(Mathf.Deg2Rad * inclinationAngle);
             float centripetalForce = ((rb.mass * Mathf.Pow(currentVelocity.magnitude, 2)) / ropeLength);
-            tensionForce += centripetalForce;
+          //  tensionForce += centripetalForce;
 
-            currentVelocity += Tensiondir * tensionForce * Time.fixedDeltaTime;
-            rb.AddForce(Tensiondir * tensionForce, ForceMode.Force);
+           // currentVelocity += Tensiondir * tensionForce * Time.fixedDeltaTime;
+            rb.AddForce(Tensiondir * 10f, ForceMode.Force);
             //Debug.Log("t");
         }
         if (retract)
