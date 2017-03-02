@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class warp : MonoBehaviour {
-
+	public bool keepMomentum = false;
     public Transform warpTarget;
     public CustomImageEffect warpEffect;
     public float range = 6;
    public float warpDelay = 1;
+	private Rigidbody rb;
     // Use this for initialization
     void Start () {
-		
+		rb = GetComponent<Rigidbody>();
+
 	}
 	void StartWarp()
     {
@@ -19,7 +21,10 @@ public class warp : MonoBehaviour {
     }
     void endWarp()
     {
-        this.transform.position = warpTarget.position;
+		if(keepMomentum == false)
+			rb.velocity = Vector3.zero;
+		rb.position=  warpTarget.position;
+     //   this.transform.position = warpTarget.position;
 
     }
     // Update is called once per frame

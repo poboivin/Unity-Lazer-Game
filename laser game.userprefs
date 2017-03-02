@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\pier\script\PROTOTYPE\Slide.cs">
+    <Files>
+      <File FileName="Assets\pier\script\PROTOTYPE\wallrun.cs" Line="59" Column="55" />
+      <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" Line="181" Column="17" />
+      <File FileName="Assets\pier\script\PROTOTYPE\warp.cs" Line="15" Column="3" />
+      <File FileName="Assets\pier\script\PROTOTYPE\Slide.cs" Line="50" Column="11" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

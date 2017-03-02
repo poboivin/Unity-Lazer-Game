@@ -81,7 +81,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public MovementSettings movementSettings = new MovementSettings();
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
-
+	
 
         private Rigidbody m_RigidBody;
         private CapsuleCollider m_Capsule;
@@ -89,7 +89,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 m_GroundContactNormal;
         private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded;
 
-
+		public Vector3 GroundContactNormal
+		{
+			get{return m_GroundContactNormal;}
+		}
         public Vector3 Velocity
         {
             get { return m_RigidBody.velocity; }
@@ -172,7 +175,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if (!m_Jumping && Mathf.Abs(input.x) < float.Epsilon && Mathf.Abs(input.y) < float.Epsilon && m_RigidBody.velocity.magnitude < 1f)
                 {
-                    m_RigidBody.Sleep();
+                  //  m_RigidBody.Sleep();
                 }
             }
             else
